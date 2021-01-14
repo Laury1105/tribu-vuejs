@@ -1,45 +1,38 @@
 <template>
   <div class="overview-container">
-    <scroll-loader :loader-method="getImageList" :loader-disable="disable">
-    </scroll-loader>
+    <images v-for="image in images" v-bind='image' v-bind:key="image.id"/>
+    <observer v-on:intersect="intersected"></observer>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Observer from '../components/Observer';
+import Images from '../components/Images';
 export default {
   name: "Overview",
-  mounted() {
-    this.getImageList();
+  components: {
+    Observer, Images
   },
-  computed: {
+  computed:{
     activePage() {
       return this.$store.state.activePage;
     },
   },
-  methods: {
-    getImageList() {
-      axios
-        .get("https://api.unsplash.com/photos", {
-          params: {
-            page: this.page++,
-            per_page: this.pageSize,
-            client_id:
-              "e874834b096dcd107c232fe4b0bb521158b62e486580c988b0a75cb0b77a2abe",
-          },
-        })
-        .then((res) => {
-          res.data && (this.images = [...this.images, ...res.data]);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
+  data() {
+    return {
+      page: 1,   
+      images: [],
+    };
   },
-  watch: {
-    page(value) {
-      this.disable = value > 10;
-    },
-  },
+  methods:{
+    async intersected(){
+       const res = await fetch("http://localhost:8081/?page="+this.page++);
+       const items = await res.json();
+       const images = items.results.results.images;
+       this.images = [...this.images, ...images];
+
+     }
+  }
 };
 </script>
