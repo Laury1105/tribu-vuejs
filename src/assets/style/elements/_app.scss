@@ -13,6 +13,11 @@ body {
 router-link {
   text-decoration: none;
 }
+.title{
+  color:white;
+  width: 50%;
+  margin: auto;
+}
 .container {
   background-color: white;
   width: 50%;
@@ -21,22 +26,28 @@ router-link {
 }
 .nav {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   background-color: rgba(147, 147, 147, 0.19);
   color:#CCC;
+
 }
 .nav-link {
-  width: 100%;
   text-align: center;
-  padding: 2% 0;
+  padding: 4% 0;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
+  text-align: center;
+  width:100%;
+
+
 }
 .active-page{
     background-color: white;
     color:$primary;
+
+ 
+
 }
 .nav-link:nth-of-type(1) {
   border-radius: 10px 0 0 0;
