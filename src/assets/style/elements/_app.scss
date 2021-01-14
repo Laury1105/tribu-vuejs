@@ -1,0 +1,46 @@
+@import "../variables/all";
+body {
+  height: 100vh;
+  background: rgb(25, 185, 160);
+  background: linear-gradient(
+    180deg,
+    rgba(25, 185, 160, 1) 0%,
+    rgba(177, 213, 142, 1) 100%
+  );
+  background-repeat: no-repeat;
+  font-family: $app-font;
+}
+router-link {
+  text-decoration: none;
+}
+.container {
+  background-color: white;
+  width: 50%;
+  margin: 2% auto;
+  border-radius: 10px;
+}
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgba(147, 147, 147, 0.19);
+  color:#CCC;
+}
+.nav-link {
+  width: 100%;
+  text-align: center;
+  padding: 2% 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.active-page{
+    background-color: white;
+    color:$primary;
+}
+.nav-link:nth-of-type(1) {
+  border-radius: 10px 0 0 0;
+}
+.nav-link:nth-of-type(2) {
+  border-radius: 0 10px 0 0;
+}

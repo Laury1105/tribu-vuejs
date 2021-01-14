@@ -1,6 +1,6 @@
 <template>
   <div>
-    Upload
+    {{activePage}}
   </div>
 </template>
 
@@ -9,6 +9,11 @@
 export default {
   name: 'Upload',
   components: {
+  },
+    computed:{
+  activePage(){
+     return this.$store.state.activePage
+    }
   }
 }
 </script>

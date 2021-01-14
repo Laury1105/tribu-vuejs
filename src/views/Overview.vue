@@ -1,6 +1,6 @@
 <template>
   <div>
-    OVERVIEW
+    {{activePage}}
   </div>
 </template>
 
@@ -9,6 +9,11 @@
 export default {
   name: 'Overview',
   components: {
+  },
+  computed:{
+    activePage(){
+     return this.$store.state.activePage
+    }
   }
 }
 </script>
