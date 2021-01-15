@@ -4,11 +4,9 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import ScrollLoader from 'vue-scroll-loader'
+
 
 Vue.config.productionTip = false
-Vue.use(VueAxios, axios)
-Vue.use(ScrollLoader)
 
 
 new Vue({

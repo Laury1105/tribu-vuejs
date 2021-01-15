@@ -5,26 +5,19 @@
     </div>
     <div class="container">
       <div class="nav">
-        <div
-          :class="
-            activePage == 'overview' ? 'active-page nav-link' : 'nav-link'
-          "
-          @click="setActivePage('overview')"
-        >
-          <router-link to="/" style="text-decoration: none; color: inherit;"
-            >Overview</router-link
-          >
-        </div>
-        <div
+       <router-link to="/" 
+          :class=" activePage == 'overview' ? 'active-page nav-link' :
+          'nav-link' " style="text-decoration: none; color: inherit;" ><div class="link-div" @click="setActivePage('overview')">  Overview</div> 
+        </router-link>
+        
+        <router-link
+          to="/upload"
+         
           :class="activePage == 'upload' ? 'active-page nav-link' : 'nav-link'"
-          @click="setActivePage('upload')"
-        >
-          <router-link
-            to="/upload"
-            style="text-decoration: none; color: inherit;"
-            >Upload</router-link
-          >
-        </div>
+          style="text-decoration: none; color: inherit;"
+        ><div class="link-div" @click="setActivePage('upload')">
+          Upload</div>
+        </router-link>
       </div>
       <router-view />
     </div>

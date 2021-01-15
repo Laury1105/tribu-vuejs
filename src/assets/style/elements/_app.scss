@@ -29,11 +29,11 @@ router-link {
   justify-content: space-between;
   background-color: rgba(147, 147, 147, 0.19);
   color:#CCC;
+  width:100%;
 
 }
 .nav-link {
   text-align: center;
-  padding: 4% 0;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 14px;
@@ -42,9 +42,12 @@ router-link {
 
 
 }
+.link-div{
+  padding:8% 0;
+}
 .active-page{
     background-color: white;
-    color:$primary;
+    color:$primary!important;
 
  
 
