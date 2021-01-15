@@ -8,8 +8,12 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "filepond": "^4.25.1",
+    "filepond-plugin-file-validate-type": "^1.2.5",
+    "filepond-plugin-image-preview": "^4.6.4",
     "vue": "^2.6.11",
     "vue-axios": "^3.2.2",
+    "vue-filepond": "^6.0.3",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
