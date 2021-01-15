@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="title">
-      <h1>Tribu: Usecase Test</h1>
+      <h2>Tribu: Usecase Test</h2>
     </div>
     <div class="container">
       <div class="nav">

@@ -7,8 +7,10 @@
             allow-multiple="true"
             accepted-file-types="image/jpeg, image/png"
             server="http://localhost:8081/add_image.php"
-            v-on:init="uploadImage"
-            v-bind:files="myFiles"/>
+            v-bind="myFiles"/>
+          <div class="upload-button">
+            <button @click="uploadImage" >Upload</button>
+          </div>
   </div>
 </template>
 
@@ -35,12 +37,19 @@ export default {
   },
   methods: {
     uploadImage() {
-    
-     
-    },
-    uploaded(){
-      console.log("uploaded")
+      alert("upload")
     }
+/*    async uploadImage() {
+      const headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "https://localhost:8081",
+        "Access-Control-Allow-Methods": "GET, PUT, POST, DELETE, HEAD, OPTIONS"
+      };
+       await axios
+      .post("http://localhost:8081/add_image.php", this.myFiles, {headers})
+      .then(response => console.log(response))
+      .catch(err => console.log(err));
+    } */
   },
   components: {
     FilePond
